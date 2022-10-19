@@ -123,3 +123,50 @@ Command `rm` is used to delete a file, or files.
 
 ***Use `rm -fr` with extreme caution***. The commands `rmdir` and `rm` have no concept of a "recycle bin", such as you'd find in Microsoft Windows. Consequently if you delete a file or directory using those commands, they are gone forever. However, most Linux distributions with a graphical desktop environment *do* have a "trash can" feature, and files/directories deleted using the GUI *can* (usually) be recovered.
 
+# cp
+
+The `cp` command is used to copy files. `cp` takes two arguments, the file to copy, and the copy's path/name. To make a copy of file "thesis" in the PWD, called "thesis_backup"
+
+    cp thesis thesis_backup
+
+Absolute paths permit you to specify the directory of original or target files. To copy file "thesis" in the PWD to a different directory, such as `/home/simon/Backups`:
+
+    cp thesis /home/simon/Backups/thesis
+
+To restore the backup you just made:
+
+    cp /home/simon/Backups/thesis thesis_restored
+
+`cp` can be used to copy directories, using the `-r` flag, which means "recursive". You could copy your entire Documents directory into some other location as follows (assuming, of course, the directory `/home/simon/Backups` exists to receive the copy):
+
+    cp -r /home/simon/Documents /home/simon/Backups/Documents_2022-10-01
+
+# mv
+
+Use command `mv` to move or rename a file or directory. To rename file "thesis" (in the PWD) to "project":
+
+    mv thesis project
+
+To move a file "thesis" from directory "/home/simon" to "/home/simon/Documents":
+
+    mv /home/simon/thesis /home/simon/Documents/thesis
+
+To move and rename the file to "old_thesis" in the same operation:
+
+    mv /home/simon/thesis /home/simon/Documents/old_thesis
+
+# cat
+
+`cat` is an abbreviation of "concatenate", but the command is most often used with a single argument to display the contents of some text file:
+
+    cat my_notes
+
+Used with multiple file path arguments, the command displays the contents of each file, one after the other, hence "concatenating" them:
+
+    cat my_notes his_notes her_notes
+
+This style is most often used with the redirection operator `>` to create a new file containing the concatenated contents of all specified files. The following command will create a new file (in the PWD) called "all_notes", containing the contents of files "my_notes", "his_notes.txt" and "her_notes" concatenated together one after the other:
+
+    cat my_notes his_notes.txt her_notes > all_notes
+
+
