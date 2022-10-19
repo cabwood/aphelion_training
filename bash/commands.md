@@ -170,3 +170,20 @@ This style is most often used with the redirection operator `>` to create a new 
     cat my_notes his_notes.txt her_notes > all_notes
 
 
+# touch
+
+Use `touch` to create a new empty file:
+
+ - `touch notes.txt`
+ - `touch /home/simon/Documents/Thesis/notes.txt`
+
+# sudo
+
+This is an abbreviation of "super-user do" or "substitute user do". It permits you to execute a command that requires super-user priviledges. For instance, if you wish to view the contents of some file that you don't (as a regular user) have the right to access:
+
+    sudo cat /etc/private/passwords.txt
+
+You will be prompted for your password, which prevents others from issuing sudo commands using your account (if, for example, you leave your computer signed-in and unnattended).
+
+This only works if the computer you are using has given you "sudo" priviledges. Usually by default the person who installed the linux operating system is given sudo priviledges, since that person will need to perform system administration operations, such as installing software for other users to work with. New user accounts added afterwards *will not* have administrator priviledges, and won't be able to use the `sudo` command, unless someone *with* "sudo" priviledges grants the new user those priviledges also.
+
